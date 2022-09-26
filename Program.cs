@@ -1,32 +1,21 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
 
-FullTimeEmployee FTE = new FullTimeEmployee();
-FTE.Firstname = "Nitin";
-FTE.Lastname = "Singhal";
-FTE.Email = "singhal.nitin108@yahoo.com";
-FTE.YearlySalary = 500000;
-FTE.PrintFullName();
+ChildClass ccObj = new ChildClass();
 
-public class Employee
+
+public class ParentClass
 {
-    public string Firstname;
-    public string Lastname;
-    public string Email;
-
-    public void PrintFullName()
-    {
-        Console.WriteLine(Firstname + " " + Lastname);
-        }
+	public ParentClass()
+	{
+		Console.WriteLine("Parent Class Contstructor Called");
+	}
 }
 
-public class FullTimeEmployee : Employee
+public class ChildClass : ParentClass
 {
-    public float YearlySalary;
+	public ChildClass()
+	{
+		Console.WriteLine("Child Class Constructor Called");
+	}
 }
-
-public class PartTimeEmployee : Employee
-{
-    public float HourlyRate;
-}
-
