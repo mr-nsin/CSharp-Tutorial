@@ -32,6 +32,7 @@ public class PartTimeEmployee : Employee
 {
     public new void PrintFullName()
     {
-        Console.WriteLine(Firstname + " " + Lastname + " - Contractor");
+        base.PrintFullName();
+        //Console.WriteLine(Firstname + " " + Lastname + " - Contractor");
     }
 }
