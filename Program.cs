@@ -1,26 +1,37 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
 
-ChildClass ccObj = new ChildClass();
+FullTimeEmployee FTE = new FullTimeEmployee();
+FTE.Firstname = "Nitin";
+FTE.Lastname = "Singhal";
+FTE.PrintFullName();
+
+PartTimeEmployee PTE = new PartTimeEmployee();
+PTE.Firstname = "John";
+PTE.Lastname = "Doe";
+PTE.PrintFullName();
 
 
-public class ParentClass
+public class Employee
 {
-	public ParentClass()
-	{
-		Console.WriteLine("Parent Class Contstructor Called");
-	}
+    public string Firstname { get; set; }
+    public string Lastname { get; set; }        
 
-	public ParentClass(string Message)
-	{
-		Console.WriteLine(Message);
-	}
+    public void PrintFullName()
+    {
+        Console.WriteLine(Firstname + " " + Lastname);
+    }
 }
 
-public class ChildClass : ParentClass
+public class FullTimeEmployee : Employee
 {
-	public ChildClass() : base("Deerived class controlling Parent Class")
-	{
-		Console.WriteLine("Child Class Constructor Called");
-	}
+    
+}
+
+public class PartTimeEmployee : Employee
+{
+    public new void PrintFullName()
+    {
+        Console.WriteLine(Firstname + " " + Lastname + " - Contractor");
+    }
 }
