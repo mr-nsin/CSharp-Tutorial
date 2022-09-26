@@ -9,7 +9,7 @@ FTE.PrintFullName();
 PartTimeEmployee PTE = new PartTimeEmployee();
 PTE.Firstname = "John";
 PTE.Lastname = "Doe";
-PTE.PrintFullName();
+((Employee)PTE).PrintFullName();
 
 
 public class Employee
@@ -32,7 +32,7 @@ public class PartTimeEmployee : Employee
 {
     public new void PrintFullName()
     {
-        base.PrintFullName();
+        //base.PrintFullName();
         //Console.WriteLine(Firstname + " " + Lastname + " - Contractor");
     }
 }
