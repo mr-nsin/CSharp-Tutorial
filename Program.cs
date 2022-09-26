@@ -10,11 +10,16 @@ public class ParentClass
 	{
 		Console.WriteLine("Parent Class Contstructor Called");
 	}
+
+	public ParentClass(string Message)
+	{
+		Console.WriteLine(Message);
+	}
 }
 
 public class ChildClass : ParentClass
 {
-	public ChildClass()
+	public ChildClass() : base("Deerived class controlling Parent Class")
 	{
 		Console.WriteLine("Child Class Constructor Called");
 	}
