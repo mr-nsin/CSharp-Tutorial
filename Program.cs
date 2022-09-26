@@ -6,10 +6,10 @@ FTE.Firstname = "Nitin";
 FTE.Lastname = "Singhal";
 FTE.PrintFullName();
 
-PartTimeEmployee PTE = new PartTimeEmployee();
+Employee PTE = new PartTimeEmployee();
 PTE.Firstname = "John";
 PTE.Lastname = "Doe";
-((Employee)PTE).PrintFullName();
+PTE.PrintFullName();
 
 
 public class Employee
