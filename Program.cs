@@ -14,7 +14,7 @@ public class BaseClass
 
 public class DerivedClass : BaseClass
 {
-    public override void Print()
+    public new void Print()
     {
         Console.WriteLine("I am derived class print method");
     }
