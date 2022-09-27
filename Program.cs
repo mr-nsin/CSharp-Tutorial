@@ -1,23 +1,26 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using System;
 
-FullTimeEmployee FTE = new FullTimeEmployee();
-FTE.Firstname = "Nitin";
-FTE.Lastname = "Singhal";
-FTE.PrintFullName();
 
-Employee PTE = new PartTimeEmployee();
-PTE.Firstname = "John";
-PTE.Lastname = "Doe";
-PTE.PrintFullName();
+Employee[] employees = new Employee[4];
+
+employees[0] = new Employee();
+employees[1] = new PartTimeEmployee();
+employees[2] = new FullTimeEmployee();
+employees[3] = new TemporaryEmployee();
+
+
+foreach (Employee employee in employees)
+{
+    employee.PrintFullName();
+}
 
 
 public class Employee
 {
-    public string Firstname { get; set; }
-    public string Lastname { get; set; }        
+    public string Firstname = "FN";
+    public string Lastname = "LN";      
 
-    public void PrintFullName()
+    public virtual void PrintFullName()
     {
         Console.WriteLine(Firstname + " " + Lastname);
     }
@@ -25,14 +28,26 @@ public class Employee
 
 public class FullTimeEmployee : Employee
 {
+    public override void PrintFullName()
+    {
+        Console.WriteLine(Firstname + " " + Lastname + " - Full Time");
+    }
     
 }
 
 public class PartTimeEmployee : Employee
 {
-    public new void PrintFullName()
+    public override void PrintFullName()
     {
-        //base.PrintFullName();
-        //Console.WriteLine(Firstname + " " + Lastname + " - Contractor");
+        Console.WriteLine(Firstname + " " + Lastname + " - Part Time");
     }
 }
+
+public class TemporaryEmployee : Employee
+{
+    public override void PrintFullName()
+    {
+        Console.WriteLine(Firstname + " " + Lastname + " - Temporary");
+    }
+}
+
