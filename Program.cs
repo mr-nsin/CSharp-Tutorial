@@ -3,8 +3,9 @@
 
 
 Student C1 = new Student();
-C1.SetID(101);
-C1.SetName(null);
+C1.Id = 101;
+C1.Name = "Nitin";
+
 
 public class Student
 {
@@ -12,40 +13,52 @@ public class Student
     private string _Name;
     private int _passMark = 35;
 
-    public void SetName(string Name)
+    public int PassMark
     {
-        if (string.IsNullOrEmpty(Name))
+        get
         {
-            throw new Exception("Student name can't be null or empty");
-        }
-        this._Name = Name;
-    }
-
-    public string GetName()
-    {
-        if (string.IsNullOrEmpty(this._Name))
-        {
-            return "No Name";
-        }
-        else
-        {
-            return this._Name;
+            return this._passMark;
         }
     }
 
-
-    public void SetID(int Id)
+    public string Name
     {
-        if (Id <= 0)
+        set
         {
-            throw new Exception("Student ID can not be negative and zero");
+            if (string.IsNullOrEmpty(value))
+            {
+                throw new Exception("Student name can't be null or empty");
+            }
+            this._Name = value;
         }
-        this._id = Id;
+        get
+        {
+            if (string.IsNullOrEmpty(this._Name))
+            {
+                return "No Name";
+            }
+            else
+            {
+                return this._Name;
+            }
+        }
+        
     }
 
-    public int GetID()
+    public int Id
     {
-        return this._id;
+        set
+        {
+            if (value <= 0)
+            {
+                throw new Exception("Student ID can not be negative and zero");
+            }
+        }
+        get
+        {
+            return this._id;
+        }
+        
     }
 }
 
